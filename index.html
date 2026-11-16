@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand K Redesign — 3 phương án</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+body { background: var(--petrol-900); color: #fff; }
+.top { padding-block: 64px 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; border-bottom: 1px solid var(--line-light); }
+.top .t-script-xl { color: var(--gold-soft); }
+.top h1 { font-size: var(--fs-h2); font-weight: 300; letter-spacing: var(--tr-heading); line-height: var(--lh-heading); }
+.top img { height: 48px; }
+.tokens { display: flex; flex-wrap: wrap; gap: 28px; padding-block: 28px; font-size: var(--fs-sm); color: rgba(255,255,255,.7); border-bottom: 1px solid var(--line-light); }
+.tokens span { display: inline-flex; align-items: center; gap: 10px; }
+.sw { width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--line-light); }
+.grp { font-size: var(--fs-xs); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); font-weight: 500; padding-top: 48px; }
+.opts { display: grid; gap: 28px; padding-block: 24px 48px; }
+.opt { display: grid; grid-template-columns: 1.35fr 1fr; background: var(--petrol-700); border: 1px solid var(--line-light); transition: border-color .5s var(--ease); }
+.opt:hover { border-color: var(--gold-soft); }
+.opt .shot { position: relative; overflow: hidden; aspect-ratio: 16/10; background: var(--petrol); }
+.opt .shot iframe { position: absolute; left: 0; top: 0; width: 1440px; height: 900px; border: 0; transform-origin: 0 0; pointer-events: none; }
+.opt .meta { padding: 32px; display: flex; flex-direction: column; }
+.opt .num { font-size: var(--fs-xs); color: var(--gold-soft); letter-spacing: .14em; }
+.opt h2 { font-size: var(--fs-h3); font-weight: 400; margin: 8px 0 10px; }
+.opt p { font-size: var(--fs-sm); color: rgba(255,255,255,.7); }
+.opt .ref { font-size: var(--fs-xs); letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 12px; }
+.pages { list-style: none; margin-top: auto; padding-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pages a { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border: 1px solid var(--line-light); font-size: var(--fs-sm); transition: background var(--dur-micro), border-color var(--dur-micro); }
+.pages a:hover { background: rgba(255,255,255,.06); border-color: var(--gold-soft); }
+.pages a span { font-size: var(--fs-xs); color: rgba(255,255,255,.5); }
+.sys-grid { display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 28px; margin-top: 20px; }
+.sys-grid > div { border: 1px solid var(--line-light); padding: 24px; background: var(--petrol-700); }
+.sys h4 { font-size: var(--fs-xs); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-soft); font-weight: 500; margin-bottom: 14px; }
+.sys table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.sys td { padding: 8px 0; border-bottom: 1px solid var(--line-light); color: rgba(255,255,255,.75); }
+.sys td:first-child { color: #fff; white-space: nowrap; padding-right: 12px; }
+.sys p, .sys li { font-size: 13px; color: rgba(255,255,255,.7); margin-top: 12px; }
+.sys ul { list-style: none; } .sys li { margin-top: 6px; }
+.ts { display: grid; gap: 6px; line-height: 1.1; }
+.note { font-size: var(--fs-xs); color: rgba(255,255,255,.55); padding-block: 32px 64px; max-width: 760px; line-height: 1.7; }
+@media (max-width: 1023px) { .opt { grid-template-columns: 1fr; } .sys-grid { grid-template-columns: 1fr; } .top { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="top">
+    <div><span class="t-script-xl">Redesign</span><h1>Grand K Hotel Suites Hanoi<br>3 phương án · Trang chủ, 3 trang con &amp; trang chi tiết</h1></div>
+    <img src="assets/img/logo.png" alt="Grand K">
+  </header>
+  <div class="tokens">
+    <span><i class="sw" style="background:#0F4A4C"></i>Petrol #0F4A4C</span>
+    <span><i class="sw" style="background:#082C2E"></i>Petrol 900 #082C2E</span>
+    <span><i class="sw" style="background:#B8965A"></i>Gold #B8965A</span>
+    <span><i class="sw" style="background:#F5F1E9"></i>Cream #F5F1E9</span>
+    <span style="font-family:var(--script);font-size:30px;font-weight:700;color:var(--gold-soft)">Tangerine</span>
+    <span>Inter 300 / 400 / 500</span>
+  </div>
+
+  <h3 class="grp">Phương án đã chốt</h3>
+  <section class="opts">
+    <article class="opt">
+      <div class="shot"><iframe src="option-1.html?shot" loading="lazy" tabindex="-1" title="Option 01"></iframe></div>
+      <div class="meta"><span class="num">OPTION 01</span><h2>Grand Classic</h2><p>Hero toàn màn hình, thanh đặt phòng nổi, phòng dạng thẻ chia đôi, nền petrol cho phần đánh giá. Sang trọng, quen thuộc, dễ duyệt.</p><div class="ref">Ref · Larita Luxury Hotel</div>
+        <ul class="pages"><li><a href="option-1.html">Trang chủ <span>→</span></a></li><li><a href="option-1-rooms.html">Hạng phòng <span>→</span></a></li><li><a href="option-1-news.html">Tin tức <span>→</span></a></li><li><a href="option-1-contact.html">Liên hệ <span>→</span></a></li><li><a href="option-1-room-one-bedroom.html">Chi tiết phòng <span>→</span></a></li><li><a href="option-1-news-hoang-hon-sky-45.html">Chi tiết bài viết <span>→</span></a></li></ul></div>
+    </article>
+    <article class="opt">
+      <div class="shot"><iframe src="option-4.html?shot" loading="lazy" tabindex="-1" title="Option 04"></iframe></div>
+      <div class="meta"><span class="num">OPTION 04</span><h2>Modern Grid</h2><p>Lưới biên tập 4/8 cột, nhãn đánh số, danh sách phòng tương tác với ảnh lớn, carousel dịch vụ tràn lề, tông kem ấm.</p><div class="ref">Ref · Lucomoria Resort</div>
+        <ul class="pages"><li><a href="option-4.html">Trang chủ <span>→</span></a></li><li><a href="option-4-rooms.html">Hạng phòng <span>→</span></a></li><li><a href="option-4-news.html">Tin tức <span>→</span></a></li><li><a href="option-4-contact.html">Liên hệ <span>→</span></a></li><li><a href="option-4-room-one-bedroom.html">Chi tiết phòng <span>→</span></a></li><li><a href="option-4-news-hoang-hon-sky-45.html">Chi tiết bài viết <span>→</span></a></li></ul></div>
+    </article>
+    <article class="opt">
+      <div class="shot"><iframe src="option-5.html?shot" loading="lazy" tabindex="-1" title="Option 05"></iframe></div>
+      <div class="meta"><span class="num">OPTION 05</span><h2>Bento Studio</h2><p>Wordmark khổng lồ, khung bo góc, bento số liệu, khối dịch vụ tối có xem trước ảnh, dải chữ chạy, footer wordmark lớn.</p><div class="ref">Ref · Lumóra · Everlake · Stayli</div>
+        <ul class="pages"><li><a href="option-5.html">Trang chủ <span>→</span></a></li><li><a href="option-5-rooms.html">Hạng phòng <span>→</span></a></li><li><a href="option-5-news.html">Tin tức <span>→</span></a></li><li><a href="option-5-contact.html">Liên hệ <span>→</span></a></li><li><a href="option-5-room-one-bedroom.html">Chi tiết phòng <span>→</span></a></li><li><a href="option-5-news-hoang-hon-sky-45.html">Chi tiết bài viết <span>→</span></a></li></ul></div>
+    </article>
+  </section>
+
+  <section class="sys">
+    <h3 class="grp" style="padding-top:0">Design System v2</h3>
+    <div class="sys-grid">
+      <div><h4>Breakpoint &amp; Grid</h4><table><tr><td>XL ≥1280</td><td>12 cột · gutter 24 · lề 48 · nội dung 1200</td></tr><tr><td>LG 1024–1279</td><td>12 cột · gutter 24 · lề 40</td></tr><tr><td>MD 768–1023</td><td>8 cột · gutter 20 · lề 32</td></tr><tr><td>SM 576–767</td><td>4 cột · gutter 16 · lề 20</td></tr><tr><td>XS ≤575</td><td>4 cột · gutter 16 · lề 16</td></tr></table><p>Nhấn phím <b>G</b> trên mỗi trang để bật/tắt lưới.</p></div>
+      <div><h4>Type scale (375 → 1440px)</h4><div class="ts"><span style="font-size:40px;font-weight:300">Display 44→96</span><span style="font-size:32px;font-weight:300">H1 40→72</span><span style="font-size:26px;font-weight:300">H2 32→52</span><span style="font-size:22px">H3 22→28</span><span style="font-size:18px;font-weight:500">H4 18→20</span><span style="font-size:17px;font-weight:300">Lead 17→20</span><span style="font-size:16px">Body 16</span><span style="font-size:14px">Small 14</span><span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase">Eyebrow 12</span><span style="font-family:var(--script);font-weight:700;font-size:40px;color:var(--gold-soft)">Script 52→84</span></div></div>
+      <div><h4>Motion</h4><ul><li>Loader + hero intro (1 lần / phiên)</li><li>Tiêu đề: chữ trồi lên theo từng dòng</li><li>Chữ Tangerine: hiện như đang viết tay</li><li>Ảnh: mở khung + parallax khi cuộn</li><li>Số liệu đếm tăng · đường kẻ tự vẽ</li><li>Smooth scroll (Lenis) · header ẩn/hiện</li><li>Bộ lọc phòng / tin tức có hiệu ứng</li><li>Tôn trọng “Reduce motion” của hệ điều hành</li></ul></div>
+    </div>
+  </section>
+  <p class="note">Ghi chú: Tangerine không hỗ trợ dấu tiếng Việt nên chỉ dùng cho chữ trang trí tiếng Anh; tiêu đề tiếng Việt dùng Inter. Nội dung, hình ảnh lấy từ grandkhanoi.com. Bài viết tin tức, ưu đãi, quyền lợi đặt trực tiếp, FAQ và tiện nghi trong phòng là nội dung mẫu cho prototype — cần khách sạn cung cấp số liệu chính thức. Form liên hệ chưa gửi dữ liệu đi đâu.</p>
+</div>
+<script>
+  const fit = () => document.querySelectorAll('.shot').forEach(s => { const f = s.querySelector('iframe'); f.style.transform = `scale(${s.clientWidth / 1440})`; });
+  fit(); addEventListener('resize', fit);
+</script>
+</body>
+</html>

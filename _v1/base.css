@@ -1,0 +1,209 @@
+/* ==========================================================
+   Grand K Hotel Suites Hanoi — Redesign prototype
+   Shared foundation: tokens, type, buttons, booking, motion
+   ========================================================== */
+:root {
+  /* Brand */
+  --petrol: #0F4A4C;
+  --petrol-700: #0C3D3F;
+  --petrol-900: #082C2E;
+  --petrol-50: #E7EEED;
+  --gold: #B8965A;
+  --gold-soft: #D8C29A;
+  /* Neutrals */
+  --paper: #FBFAF7;
+  --cream: #F5F1E9;
+  --sand: #ECE5D7;
+  --ink: #142022;
+  --muted: #5B6A6B;
+  --line: rgba(15, 74, 76, .14);
+  --line-light: rgba(255, 255, 255, .24);
+  /* Type */
+  --script: 'Tangerine', cursive;
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Layout */
+  --container: 1240px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --section: clamp(72px, 10vw, 140px);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: 0; }
+svg.ic { width: 1em; height: 1em; flex: none; }
+
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section); }
+.center { text-align: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Typography ---------- */
+.script {
+  font-family: var(--script);
+  font-weight: 700;
+  line-height: .85;
+  letter-spacing: 0;
+  display: block;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+.display {
+  font-weight: 300;
+  letter-spacing: -.025em;
+  line-height: 1.08;
+}
+.lead { font-size: clamp(16px, 1.3vw, 18px); color: var(--muted); font-weight: 300; }
+.muted { color: var(--muted); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  height: 50px; padding: 0 28px;
+  font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+  border: 1px solid transparent;
+  transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+  white-space: nowrap; cursor: pointer;
+}
+.btn .ic { font-size: 16px; transition: transform .35s var(--ease); }
+.btn:hover .ic { transform: translateX(4px); }
+.btn-primary { background: var(--petrol); color: #fff; }
+.btn-primary:hover { background: var(--petrol-900); }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: #A3824A; }
+.btn-light { background: #fff; color: var(--petrol); }
+.btn-light:hover { background: var(--cream); }
+.btn-outline { border-color: currentColor; }
+.btn-outline:hover { background: var(--petrol); color: #fff; border-color: var(--petrol); }
+.btn-outline-light { border-color: rgba(255,255,255,.55); color: #fff; }
+.btn-outline-light:hover { background: #fff; color: var(--petrol); }
+.btn-pill { border-radius: 999px; }
+.btn-sm { height: 40px; padding: 0 20px; font-size: 11px; }
+
+.link-arrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+}
+.link-arrow .ic { transition: transform .35s var(--ease); }
+.link-arrow:hover .ic { transform: translateX(5px); }
+
+/* ---------- Booking widget ---------- */
+.booking {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  background: #fff; color: var(--ink);
+}
+.booking .field {
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+  padding: 16px 24px; border-right: 1px solid var(--line); min-width: 0;
+}
+.booking label {
+  font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+}
+.booking input, .booking select {
+  width: 100%; border: 0; background: transparent; outline: none;
+  font-size: 15px; font-weight: 400; padding: 0; appearance: none; -webkit-appearance: none;
+}
+.booking input::-webkit-calendar-picker-indicator { opacity: .5; cursor: pointer; }
+.booking .btn { height: auto; min-height: 72px; }
+@media (max-width: 760px) {
+  .booking { grid-template-columns: 1fr 1fr; }
+  .booking .field { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .booking .field:nth-child(2) { border-right: 0; }
+  .booking .field:nth-child(3) { grid-column: 1 / -1; border-right: 0; }
+  .booking .btn { grid-column: 1 / -1; min-height: 56px; }
+}
+
+/* ---------- Header helpers ---------- */
+.logo img { height: 40px; width: auto; }
+.nav { display: flex; gap: clamp(18px, 2.2vw, 34px); font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+.nav a { position: relative; padding-block: 6px; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.nav a:hover::after { transform: scaleX(1); }
+.menu-btn { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; font-size: 26px; }
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .menu-btn { display: inline-flex; }
+  .hide-tablet { display: none !important; }
+}
+
+/* Mobile drawer */
+.drawer {
+  position: fixed; inset: 0; z-index: 90; background: var(--petrol-900); color: #fff;
+  display: flex; flex-direction: column; padding: 24px var(--gutter);
+  transform: translateY(-100%); transition: transform .6s var(--ease);
+}
+.menu-open .drawer { transform: none; }
+.drawer-top { display: flex; justify-content: space-between; align-items: center; }
+.drawer nav { display: flex; flex-direction: column; gap: 6px; margin-top: 48px; }
+.drawer nav a { font-size: 28px; font-weight: 300; padding-block: 8px; border-bottom: 1px solid var(--line-light); }
+.drawer .script { font-size: 64px; color: var(--gold-soft); margin-top: auto; }
+
+/* Mobile sticky booking bar */
+.mbar { display: none; }
+@media (max-width: 760px) {
+  .mbar {
+    display: grid; grid-template-columns: 56px 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+    background: var(--petrol); color: #fff; height: 56px; box-shadow: 0 -8px 24px rgba(0,0,0,.12);
+  }
+  .mbar a { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 12px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+  .mbar a:first-child { border-right: 1px solid var(--line-light); font-size: 20px; }
+  body { padding-bottom: 56px; }
+}
+
+/* ---------- Horizontal scroller ---------- */
+.hscroll {
+  display: grid; grid-auto-flow: column; overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.hscroll::-webkit-scrollbar { display: none; }
+.hscroll > * { scroll-snap-align: start; }
+.arrow-btn {
+  width: 52px; height: 52px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid currentColor; font-size: 18px; transition: background .3s, color .3s;
+}
+.arrow-btn:hover { background: var(--petrol); color: #fff; border-color: var(--petrol); }
+
+/* ---------- Media helpers ---------- */
+.cover { width: 100%; height: 100%; object-fit: cover; }
+.zoom { overflow: hidden; }
+.zoom img { transition: transform 1.2s var(--ease); }
+.zoom:hover img { transform: scale(1.05); }
+
+/* ---------- Motion ---------- */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.d1 { transition-delay: .1s; } .js .reveal.d2 { transition-delay: .2s; } .js .reveal.d3 { transition-delay: .3s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0s !important; }
+}
+
+/* ---------- Prototype option switcher ---------- */
+.opt-switch {
+  position: fixed; right: 16px; bottom: 16px; z-index: 80;
+  display: flex; align-items: center; gap: 4px; padding: 4px;
+  background: rgba(8, 44, 46, .92); backdrop-filter: blur(8px); color: #fff;
+  border-radius: 999px; font-size: 12px; font-weight: 500; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+.opt-switch a { padding: 8px 12px; border-radius: 999px; opacity: .7; }
+.opt-switch a:hover { opacity: 1; }
+.opt-switch a.on { background: var(--gold); opacity: 1; }
+@media (max-width: 760px) { .opt-switch { bottom: 68px; left: 50%; transform: translateX(-50%); } }

@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand K Hotel Suites Hanoi — Option 01 · Grand Classic</title>
+<script>(function(r){if(!/[?&]shot/.test(location.search)&&!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');setTimeout(function(){if(!window.gsap)r.classList.remove('motion')},3500)}})(document.documentElement)</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+/* ===== Option 01 — Grand Classic (ref: Larita) · v2 on 12/8/4 grid ===== */
+
+/* Header */
+.hdr { position: fixed; inset: 0 0 auto; z-index: 60; color: #fff; padding-block: 24px; }
+.hdr .container { display: flex; align-items: center; justify-content: space-between; gap: var(--gap); }
+.hdr.scrolled { background: var(--petrol-900); padding-block: 14px; }
+.hdr .btn { height: 44px; }
+
+/* Hero */
+.hero { position: relative; height: 100svh; min-height: 680px; max-height: 1000px; color: #fff; overflow: hidden; background: var(--petrol-900); }
+.hero .slides { position: absolute; inset: 0; }
+.hero .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s var(--ease); }
+.hero .slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 8s linear; }
+.hero .slide.is-active { opacity: 1; }
+.hero .slide.is-active img { transform: scale(1); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,44,46,.7) 0%, rgba(8,44,46,.25) 35%, rgba(8,44,46,.5) 70%, rgba(8,44,46,.92) 100%); pointer-events: none; }
+.hero-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-bottom: var(--s7); }
+.hero .stars { display: flex; gap: 6px; color: var(--gold-soft); font-size: 14px; margin-bottom: var(--s3); }
+.hero .t-script-xl { color: var(--gold-soft); }
+.hero h1 { font-size: var(--fs-h1); font-weight: 300; line-height: var(--lh-heading); letter-spacing: .1em; text-transform: uppercase; margin-top: var(--s1); }
+.hero .t-lead { color: rgba(255,255,255,.85); max-width: 34em; margin: var(--s3) auto var(--s5); }
+.hero-ctrl { position: absolute; z-index: 3; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border: 1px solid var(--line-light); border-radius: 50%; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; transition: background var(--dur-micro); }
+.hero-ctrl:hover { background: rgba(255,255,255,.14); }
+.hero-ctrl.prev { left: var(--margin); } .hero-ctrl.next { right: var(--margin); }
+.hero-meta { position: absolute; z-index: 3; left: 0; right: 0; bottom: 120px; }
+.hero-meta .container { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; color: rgba(255,255,255,.8); }
+.hero-meta strong { display: block; font-size: var(--fs-sm); font-weight: 500; color: #fff; }
+.hero-meta .r { text-align: right; }
+.dots { display: flex; gap: 10px; }
+.dots button { position: relative; width: 44px; height: 2px; background: rgba(255,255,255,.3); overflow: hidden; }
+.dots button::after { content: ""; position: absolute; inset: 0; background: var(--gold-soft); transform: scaleX(0); transform-origin: left; }
+.dots button.is-active::after { animation: dotfill 6.5s linear forwards; }
+@keyframes dotfill { to { transform: scaleX(1); } }
+
+/* Booking dock */
+.dock { position: relative; z-index: 5; margin-top: -60px; }
+.dock .booking { box-shadow: 0 30px 60px -20px rgba(8,44,46,.35); }
+
+/* Section heading pattern */
+.head .eyebrow { color: var(--gold); }
+.head .t-script { color: var(--petrol); margin: var(--s2) 0 var(--s1); }
+.head.center { text-align: center; }
+
+/* USP */
+.usp { border-bottom: 1px solid var(--line); }
+.usp > div { grid-column: span 3; padding: var(--s6) var(--s3); text-align: center; border-right: 1px solid var(--line); }
+.usp > div:last-child { border-right: 0; }
+.usp .ic { font-size: 40px; color: var(--gold); margin: 0 auto var(--s3); display: block; }
+.usp h3 { margin-bottom: var(--s1); }
+.usp p { color: var(--muted); max-width: 24em; margin-inline: auto; }
+
+/* About */
+.about { align-items: center; }
+.about-media { grid-column: 1 / span 6; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); align-items: end; padding-bottom: var(--s6); }
+.about-media figure:nth-child(1) { aspect-ratio: 3/4; transform: translateY(var(--s6)); }
+.about-media figure:nth-child(2) { aspect-ratio: 3/4.3; }
+.badge { position: absolute; left: 50%; bottom: 0; margin-left: -66px; background: var(--petrol); color: #fff; width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center; text-align: center; border: 6px solid var(--paper); z-index: 2; }
+.badge b { display: block; font-size: var(--fs-h3); font-weight: 300; line-height: 1; }
+.badge span { font-size: var(--fs-xs); letter-spacing: .2em; text-transform: uppercase; opacity: .8; }
+.about-copy { grid-column: 8 / span 5; }
+.about-copy p { color: var(--muted); margin: var(--s3) 0 var(--s4); }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: var(--s5); padding-top: var(--s4); position: relative; }
+.stats::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line); }
+.stats b { display: block; font-size: var(--fs-h2); font-weight: 300; letter-spacing: var(--tr-heading); color: var(--petrol); line-height: 1; margin-bottom: var(--s1); }
+
+/* Rooms */
+.rooms { background: var(--cream); }
+.rooms-stage { margin-top: var(--s6); }
+.room { display: none; background: #fff; min-height: 520px; }
+.room.is-active { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.room-info { grid-column: 1 / span 5; padding: var(--s6) var(--s5); display: flex; flex-direction: column; justify-content: center; }
+.room-info .eyebrow { color: var(--gold); }
+.room-info h3 { margin: var(--s2) 0; font-size: var(--fs-h2); font-weight: 300; letter-spacing: var(--tr-heading); line-height: var(--lh-heading); }
+.room-info p { color: var(--muted); }
+.amen { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--s2) var(--s3); margin: var(--s4) 0 var(--s5); }
+.amen li { display: flex; gap: 10px; align-items: center; }
+.amen .ic { font-size: 20px; color: var(--petrol); }
+.room-info .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.room-media { grid-column: 6 / span 7; position: relative; overflow: hidden; }
+.room-media img { position: absolute; inset: 0; }
+.room.is-active .room-media img { animation: roomImg 1.4s var(--ease-expo) both; }
+.room.is-active .room-info > * { animation: roomTxt .9s var(--ease) both; }
+.room.is-active .room-info > *:nth-child(2) { animation-delay: .06s; } .room.is-active .room-info > *:nth-child(3) { animation-delay: .12s; }
+.room.is-active .room-info > *:nth-child(4) { animation-delay: .18s; } .room.is-active .room-info > *:nth-child(5) { animation-delay: .24s; }
+@keyframes roomImg { from { transform: scale(1.12); clip-path: inset(0 0 0 100%); } to { transform: scale(1); clip-path: inset(0 0 0 0); } }
+@keyframes roomTxt { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.rooms-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); margin-top: var(--s4); }
+.room-tabs { display: flex; gap: var(--s1); flex-wrap: wrap; }
+.room-tabs button { padding: 10px 16px; font-size: var(--fs-xs); letter-spacing: .08em; border: 1px solid var(--line); color: var(--muted); transition: background var(--dur-micro), color var(--dur-micro), border-color var(--dur-micro); }
+.room-tabs button.is-active, .room-tabs button:hover { background: var(--petrol); color: #fff; border-color: var(--petrol); }
+.rooms-arrows { display: flex; gap: 10px; color: var(--petrol); }
+
+/* Facilities */
+.fac { margin-top: var(--s6); row-gap: var(--s5); }
+.fac-item { grid-column: span 4; display: grid; grid-template-columns: 56px 1fr; gap: var(--s2); }
+.fac-item .ic { font-size: 40px; color: var(--gold); }
+.fac-item h3 { margin-bottom: 6px; }
+.fac-item p { color: var(--muted); }
+
+/* Video band (parallax frame) */
+.band { height: 80vh; min-height: 520px; max-height: 820px; display: grid; place-items: center; text-align: center; color: #fff; }
+.band::after { content: ""; position: absolute; inset: 0; background: rgba(8,44,46,.55); }
+.band-inner { position: relative; z-index: 2; }
+.band .eyebrow, .band .t-script-xl { color: var(--gold-soft); }
+.band h2 { letter-spacing: .02em; }
+.play { width: 96px; height: 96px; border-radius: 50%; background: var(--gold); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 26px; margin-top: var(--s5); position: relative; transition: transform .5s var(--ease-expo); }
+.play:hover { transform: scale(1.08); }
+.play::before, .play::after { content: ""; position: absolute; inset: -14px; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; animation: pulse 2.8s var(--ease-out) infinite; }
+.play::after { animation-delay: 1.4s; }
+@keyframes pulse { from { transform: scale(.85); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
+
+/* Reviews */
+.reviews { background: var(--petrol); color: #fff; }
+.reviews .head .eyebrow, .reviews .head .t-script { color: var(--gold-soft); }
+.reviews .head { grid-column: 1 / -1; }
+.rv-wrap { grid-column: 3 / span 8; margin-top: var(--s5); text-align: center; }
+.rv-wrap .ic.q { font-size: 44px; color: var(--gold-soft); margin: 0 auto var(--s3); display: block; }
+.rv { display: none; }
+.rv.is-active { display: block; animation: roomTxt .9s var(--ease) both; }
+.rv blockquote { font-size: var(--fs-h3); font-weight: 300; line-height: 1.5; letter-spacing: -.01em; }
+.rv-stars { display: flex; justify-content: center; gap: 4px; color: var(--gold-soft); font-size: 14px; margin-top: var(--s3); }
+.rv footer { margin-top: var(--s3); color: rgba(255,255,255,.7); }
+.rv footer b { display: block; color: #fff; font-weight: 500; }
+.rv-ctrl { display: flex; justify-content: center; align-items: center; gap: var(--s3); margin-top: var(--s5); }
+.rv-ctrl .arrow-btn { color: #fff; border-color: var(--line-light); }
+.rv-sources { grid-column: 1 / -1; display: flex; justify-content: center; gap: var(--s5); margin-top: var(--s6); padding-top: var(--s5); position: relative; flex-wrap: wrap; color: rgba(255,255,255,.75); }
+.rv-sources::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--line-light); }
+.rv-sources span { display: flex; align-items: center; gap: 10px; }
+.rv-sources .ic { color: var(--gold-soft); }
+
+/* Location */
+.loc-intro { align-items: end; }
+.loc-intro .head { grid-column: 1 / span 6; }
+.loc-intro p { grid-column: 8 / span 5; color: var(--muted); }
+.loc-grid { margin-top: var(--s6); row-gap: var(--gap); }
+.loc { grid-column: span 4; aspect-ratio: 4/3; color: #fff; display: block; }
+.loc::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,44,46,.05) 30%, rgba(8,44,46,.9)); }
+.loc div { position: absolute; z-index: 2; left: var(--s3); right: var(--s3); bottom: var(--s3); }
+.loc .eyebrow { color: var(--gold-soft); }
+.loc h3 { margin-top: 4px; }
+
+/* Footer */
+.ftr { background: var(--petrol-900); color: rgba(255,255,255,.75); padding-top: var(--s7); }
+.ftr-top { padding-bottom: var(--s6); row-gap: var(--s5); }
+.ftr-top > :nth-child(1) { grid-column: 1 / span 4; }
+.ftr-top > :nth-child(2) { grid-column: 6 / span 2; }
+.ftr-top > :nth-child(3) { grid-column: 8 / span 2; }
+.ftr-top > :nth-child(4) { grid-column: 10 / span 3; }
+.ftr h4 { color: #fff; margin-bottom: var(--s3); }
+.ftr ul { list-style: none; display: grid; gap: 10px; }
+.ftr a { transition: color var(--dur-micro); } .ftr a:hover { color: #fff; }
+.ftr .contact li { display: flex; gap: 12px; align-items: flex-start; }
+.ftr .contact .ic { color: var(--gold-soft); margin-top: 4px; }
+.ftr .t-script-sm { color: var(--gold-soft); margin: var(--s3) 0 var(--s1); }
+.news { display: flex; border-bottom: 1px solid var(--line-light); margin-top: var(--s2); }
+.news input { flex: 1; background: none; border: 0; outline: none; padding: 12px 0; color: #fff; }
+.news input::placeholder { color: rgba(255,255,255,.5); }
+.news button { color: var(--gold-soft); font-size: 20px; }
+.ftr-line { height: 1px; background: var(--line-light); }
+.ftr-bot { display: flex; justify-content: space-between; padding-block: var(--s4); gap: var(--s2); flex-wrap: wrap; }
+
+/* ---------- lg 1024–1279 ---------- */
+@media (max-width: 1279px) {
+  .about-copy { grid-column: 7 / span 6; }
+  .rv-wrap { grid-column: 2 / span 10; }
+  .ftr-top > :nth-child(2) { grid-column: 5 / span 2; }
+  .ftr-top > :nth-child(3) { grid-column: 7 / span 3; }
+  .ftr-top > :nth-child(4) { grid-column: 10 / span 3; }
+}
+/* ---------- md 768–1023 (8 col) ---------- */
+@media (max-width: 1023px) {
+  .usp > div { grid-column: span 4; }
+  .usp > div:nth-child(2) { border-right: 0; }
+  .usp > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .about-media { grid-column: 1 / -1; }
+  .about-copy { grid-column: 1 / span 7; margin-top: var(--s7); }
+  .room.is-active { grid-template-columns: 1fr; }
+  .room-info, .room-media { grid-column: 1 / -1; }
+  .room-media { aspect-ratio: 16/10; order: -1; }
+  .room-info { padding: var(--s5) var(--s4); }
+  .fac-item { grid-column: span 4; }
+  .rv-wrap { grid-column: 1 / -1; }
+  .loc-intro .head, .loc-intro p { grid-column: 1 / -1; }
+  .loc-intro p { margin-top: var(--s3); max-width: 60ch; }
+  .loc { grid-column: span 4; }
+  .ftr-top > :nth-child(1) { grid-column: 1 / -1; }
+  .ftr-top > :nth-child(2) { grid-column: 1 / span 2; }
+  .ftr-top > :nth-child(3) { grid-column: 3 / span 3; }
+  .ftr-top > :nth-child(4) { grid-column: 6 / span 3; }
+}
+/* ---------- sm 576–767 (4 col) ---------- */
+@media (max-width: 767px) {
+  .hero-ctrl, .hero-meta .l, .hero-meta .r { display: none; }
+  .hero-meta { bottom: 88px; }
+  .hero-meta .container { grid-template-columns: 1fr; justify-items: center; }
+  .dock { margin-top: -40px; }
+  .usp > div { grid-column: span 2; padding: var(--s5) var(--s2); }
+  .about-copy { grid-column: 1 / -1; }
+  .about-media figure:nth-child(1) { transform: translateY(var(--s4)); }
+  .rooms-nav { flex-direction: column; align-items: stretch; }
+  .room-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .room-tabs button { white-space: nowrap; }
+  .rooms-arrows { justify-content: center; }
+  .amen { grid-template-columns: 1fr; }
+  .fac-item, .loc { grid-column: 1 / -1; }
+  .ftr-top > * { grid-column: 1 / -1 !important; }
+  .rv-sources { flex-direction: column; align-items: center; gap: var(--s2); }
+}
+/* ---------- xs ≤575 ---------- */
+@media (max-width: 575px) {
+  .usp > div { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
+  .usp > div:last-child { border-bottom: 0; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .badge { width: 104px; height: 104px; margin-left: -52px; }
+}
+</style>
+</head>
+<body>
+<div class="loader" aria-hidden="true"><img src="assets/img/logo.png" alt=""><span class="bar"><i></i></span></div>
+
+<header class="hdr" data-header>
+  <div class="container">
+    <a href="#" class="logo"><img src="assets/img/logo.png" alt="Grand K Hotel Suites Hanoi"></a>
+    <nav class="nav">
+      <a href="option-1-rooms.html">Hạng phòng</a><a href="#facilities">Ẩm thực</a><a href="#facilities">Hội nghị</a><a href="#facilities">Tiện ích</a><a href="option-1-news.html">Tin tức</a><a href="option-1-contact.html">Liên hệ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a href="#book" class="btn btn-outline-light hide-tablet"><i data-icon="calendar"></i>Đặt phòng</a>
+      <button class="menu-btn" data-menu-toggle aria-label="Mở menu"><i data-icon="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer">
+  <div class="drawer-top"><img src="assets/img/logo.png" alt="" style="height:40px"><button class="menu-btn" style="display:inline-flex" data-menu-toggle aria-label="Đóng menu"><i data-icon="close"></i></button></div>
+  <nav><a href="option-1-rooms.html">Hạng phòng</a><a href="#facilities">Ẩm thực</a><a href="#facilities">Hội nghị</a><a href="#facilities">Tiện ích</a><a href="option-1-news.html">Tin tức</a><a href="option-1-contact.html">Liên hệ</a></nav>
+  <span class="script">Welcome home</span>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero" data-fader="6500">
+  <div class="slides" data-hero="media">
+    <div class="slide" data-slide><img src="assets/img/entrance.jpg" alt="Lối vào Grand K Hotel Suites"></div>
+    <div class="slide" data-slide><img src="assets/img/lobby.jpg" alt="Sảnh khách sạn"></div>
+    <div class="slide" data-slide><img src="assets/img/hotel-night.jpg" alt="Toàn cảnh Cầu Giấy về đêm"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="stars" data-hero aria-label="Khách sạn 5 sao"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div>
+    <span class="t-script-xl" data-hero="script">Welcome to</span>
+    <h1 data-hero="split">Grand K<br>Hotel Suites Hanoi</h1>
+    <p class="t-lead" data-hero>262 phòng &amp; căn hộ dịch vụ chuẩn 5 sao giữa trái tim Cầu Giấy — nơi nhịp sống phía Tây Hà Nội bắt đầu.</p>
+    <a href="#about" class="link-arrow" data-hero>Khám phá <i data-icon="arrow"></i></a>
+  </div>
+  <button class="hero-ctrl prev" data-fprev aria-label="Ảnh trước"><i data-icon="chevron-left"></i></button>
+  <button class="hero-ctrl next" data-fnext aria-label="Ảnh sau"><i data-icon="chevron"></i></button>
+  <div class="hero-meta" data-hero>
+    <div class="container t-sm">
+      <div class="l"><strong>Số 2 Phạm Văn Bạch</strong>Cầu Giấy, Hà Nội</div>
+      <div class="dots"><button data-dot aria-label="Ảnh 1"></button><button data-dot aria-label="Ảnh 2"></button><button data-dot aria-label="Ảnh 3"></button></div>
+      <div class="r"><strong>Tripadvisor · Google</strong>Được khách quốc tế đánh giá 5★</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<div class="container dock" id="book" data-hero>
+  <form class="booking">
+    <div class="field"><label for="ci">Nhận phòng</label><input id="ci" type="date" data-checkin></div>
+    <div class="field"><label for="co">Trả phòng</label><input id="co" type="date" data-checkout></div>
+    <div class="field"><label for="gu">Số khách</label><select id="gu"><option>2 người lớn · 1 phòng</option><option>1 người lớn · 1 phòng</option><option>2 người lớn, 1 trẻ em</option><option>4 người lớn · 2 phòng</option></select></div>
+    <button type="submit" class="btn btn-primary">Kiểm tra phòng trống <i data-icon="arrow"></i></button>
+  </form>
+</div>
+
+<!-- USP -->
+<section class="container">
+  <div class="g12 usp" data-stagger>
+    <div><i data-icon="pin"></i><h3 class="t-h4">Trung tâm phía Tây</h3><p class="t-sm">Vài phút tới Trung tâm Hội nghị Quốc gia và SVĐ Mỹ Đình.</p></div>
+    <div><i data-icon="kitchen"></i><h3 class="t-h4">Căn hộ dịch vụ</h3><p class="t-sm">Không gian rộng rãi, phù hợp lưu trú dài ngày cùng gia đình.</p></div>
+    <div><i data-icon="pool"></i><h3 class="t-h4">Hồ bơi nước nóng</h3><p class="t-sm">Hồ bơi trong nhà được khách đánh giá đẹp bậc nhất Hà Nội.</p></div>
+    <div><i data-icon="bar"></i><h3 class="t-h4">SKY 45 Bar</h3><p class="t-sm">Cocktail trên tầng thượng với tầm nhìn toàn cảnh thành phố.</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container g12 about">
+    <div class="about-media">
+      <figure class="px" data-img><img src="assets/img/room-1br.jpg" alt="One Bedroom Suite" data-parallax="6"></figure>
+      <figure class="px" data-img><img src="assets/img/lobby.jpg" alt="Sảnh khách sạn" data-parallax="6"></figure>
+      <div class="badge" data-float="50"><div><b>5★</b><span>Tiêu chuẩn</span></div></div>
+    </div>
+    <div class="about-copy head">
+      <span class="eyebrow" data-fade>Chào mừng đến Grand K</span>
+      <span class="t-script" data-script>Our story</span>
+      <h2 class="t-h2" data-split>Khách sạn 5 sao giữa trái tim Cầu Giấy</h2>
+      <p data-fade>Grand K Hotel Suites Hà Nội tọa lạc tại khu đô thị hiện đại bậc nhất Thủ đô, kết nối thuận tiện tới Trung tâm Hội nghị Quốc gia, Khu liên hợp thể thao Mỹ Đình và Sân bay quốc tế Nội Bài. Phòng họp công nghệ hiện đại, nhà hàng &amp; quầy bar với tầm nhìn toàn cảnh thành phố mang đến trải nghiệm lưu trú sang trọng và thoải mái nhất.</p>
+      <div data-fade><a href="#rooms" class="btn btn-primary">Về chúng tôi <i data-icon="arrow"></i></a></div>
+      <div class="stats" data-stagger>
+        <div><b data-counter="262">262</b><span class="eyebrow t-muted">Phòng &amp; căn hộ</span></div>
+        <div><b><span data-counter="175">175</span>m²</b><span class="eyebrow t-muted">Phòng hội nghị</span></div>
+        <div><b data-counter="45">45</b><span class="eyebrow t-muted">Tầng Sky Bar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="section rooms" id="rooms">
+  <div class="container" data-slides>
+    <div class="head center">
+      <span class="eyebrow" data-fade>Tinh tế &amp; rộng rãi</span>
+      <span class="t-script" data-script>Rooms &amp; Suites</span>
+      <h2 class="t-h2" data-split>Bộ sưu tập phòng &amp; căn hộ</h2>
+    </div>
+    <div class="rooms-stage" data-fade>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Phòng · 30 m²</span><h3>Deluxe</h3><p>Không gian ấm cúng, hiện đại với đầy đủ tiện nghi thiết yếu — lựa chọn lý tưởng cho chuyến công tác hay kỳ nghỉ ngắn ngày.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>30 m²</li><li><i data-icon="view"></i>Hướng thành phố</li><li><i data-icon="bed"></i>Giường King / Twin</li><li><i data-icon="wifi"></i>Wifi tốc độ cao</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-deluxe.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-deluxe.jpg" alt="Phòng Deluxe"></div>
+      </article>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Phòng · 45 m²</span><h3>Premium</h3><p>Rộng rãi hơn với khu vực tiếp khách riêng, ánh sáng tự nhiên tràn ngập và tầm nhìn thoáng đãng ra thành phố.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>45 m²</li><li><i data-icon="view"></i>Hướng thành phố</li><li><i data-icon="bed"></i>Giường King</li><li><i data-icon="wifi"></i>Wifi tốc độ cao</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-premium.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-premium.jpg" alt="Phòng Premium"></div>
+      </article>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Suite · 45 m²</span><h3>Junior Suite</h3><p>Thiết kế dạng suite với không gian sinh hoạt liền mạch, phù hợp cho cặp đôi hoặc khách lưu trú dài ngày.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>45 m²</li><li><i data-icon="view"></i>Hướng thành phố</li><li><i data-icon="bed"></i>Giường đôi</li><li><i data-icon="wifi"></i>Wifi tốc độ cao</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-junior-suite.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-junior.jpg" alt="Junior Suite"></div>
+      </article>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Căn hộ · 70 m²</span><h3>One Bedroom Suite</h3><p>Căn hộ một phòng ngủ với phòng khách và bếp riêng — cảm giác như ở nhà giữa lòng Thủ đô.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>70 m²</li><li><i data-icon="kitchen"></i>Bếp riêng</li><li><i data-icon="bed"></i>1 phòng ngủ</li><li><i data-icon="wifi"></i>Wifi tốc độ cao</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-one-bedroom.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-1br.jpg" alt="One Bedroom Suite"></div>
+      </article>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Căn hộ · 95 m²</span><h3>Two Bedroom Executive Suite</h3><p>Hai phòng ngủ, phòng khách rộng và bếp đầy đủ — lựa chọn hoàn hảo cho gia đình hoặc nhóm công tác.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>95 m²</li><li><i data-icon="kitchen"></i>Bếp riêng</li><li><i data-icon="bed"></i>2 phòng ngủ</li><li><i data-icon="wifi"></i>Wifi tốc độ cao</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-two-bedroom-executive.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-2br-exec.jpg" alt="Two Bedroom Executive Suite"></div>
+      </article>
+      <article class="room" data-item>
+        <div class="room-info"><span class="eyebrow">Căn hộ · 95 m²</span><h3>Two Bedroom Panoramic Suite</h3><p>Căn hộ góc với tầm nhìn toàn cảnh phía Tây Hà Nội — đẹp nhất khi thành phố lên đèn.</p>
+          <ul class="amen t-sm"><li><i data-icon="area"></i>95 m²</li><li><i data-icon="view"></i>View toàn cảnh</li><li><i data-icon="bed"></i>2 phòng ngủ</li><li><i data-icon="kitchen"></i>Bếp riêng</li></ul>
+          <div class="actions"><a href="#book" class="btn btn-primary"><i data-icon="calendar"></i>Đặt phòng</a><a href="option-1-room-two-bedroom-panoramic.html" class="btn btn-outline">Xem phòng <i data-icon="arrow"></i></a></div></div>
+        <div class="room-media"><img class="cover" src="assets/img/room-2br-pano.jpg" alt="Two Bedroom Panoramic Suite"></div>
+      </article>
+    </div>
+    <div class="rooms-nav" data-fade>
+      <div class="room-tabs"><button data-tab>Deluxe</button><button data-tab>Premium</button><button data-tab>Junior Suite</button><button data-tab>One Bedroom</button><button data-tab>Two Bedroom Executive</button><button data-tab>Two Bedroom Panoramic</button></div>
+      <div class="rooms-arrows"><button class="arrow-btn" data-prev aria-label="Phòng trước"><i data-icon="arrow-left"></i></button><button class="arrow-btn" data-next aria-label="Phòng sau"><i data-icon="arrow"></i></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section class="section" id="facilities">
+  <div class="container">
+    <div class="head center">
+      <span class="eyebrow" data-fade>Hiện đại &amp; tiện nghi</span>
+      <span class="t-script" data-script>Facilities</span>
+      <h2 class="t-h2" data-split>Tiện ích &amp; dịch vụ</h2>
+    </div>
+    <div class="g12 fac" data-stagger>
+      <div class="fac-item"><i data-icon="pool"></i><div><h3 class="t-h4">Hồ bơi nước nóng trong nhà</h3><p class="t-sm">Bơi quanh năm dưới mái kính ngập nắng, view thành phố.</p></div></div>
+      <div class="fac-item"><i data-icon="bar"></i><div><h3 class="t-h4">SKY 45 Bar</h3><p class="t-sm">Không gian rooftop yên tĩnh với những ly cocktail tinh tế.</p></div></div>
+      <div class="fac-item"><i data-icon="dining"></i><div><h3 class="t-h4">Nhà hàng &amp; buffet sáng</h3><p class="t-sm">Hành trình ẩm thực đa dạng, tinh tế từ nguyên liệu đến chế biến.</p></div></div>
+      <div class="fac-item"><i data-icon="meeting"></i><div><h3 class="t-h4">Phòng hội nghị 175m²</h3><p class="t-sm">Âm thanh, sân khấu và màn hình LED hiện đại cho mọi sự kiện.</p></div></div>
+      <div class="fac-item"><i data-icon="kids"></i><div><h3 class="t-h4">Khu vui chơi trẻ em</h3><p class="t-sm">Không gian an toàn để các bé thoả sức khám phá.</p></div></div>
+      <div class="fac-item"><i data-icon="car"></i><div><h3 class="t-h4">Dịch vụ đưa đón</h3><p class="t-sm">Đưa đón sân bay Nội Bài và di chuyển trong thành phố.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BAND (parallax) -->
+<section class="band px">
+  <img src="assets/img/pool.jpg" alt="Hồ bơi trong nhà" data-parallax="10">
+  <div class="band-inner container">
+    <span class="eyebrow" data-fade>Hotel film</span>
+    <span class="t-script-xl" data-script>Experience</span>
+    <h2 class="t-h2" data-split>Khám phá Grand K</h2>
+    <div data-fade><a href="#" class="play" aria-label="Xem video"><i data-icon="play"></i></a></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews" id="reviews">
+  <div class="container g12" data-slides>
+    <div class="head center">
+      <span class="eyebrow" data-fade>Khách hàng nói gì</span>
+      <span class="t-script" data-script>Guest stories</span>
+      <h2 class="sr-only">Đánh giá của khách lưu trú</h2>
+    </div>
+    <div class="rv-wrap" data-fade>
+      <i data-icon="quote" class="q"></i>
+      <div class="rv" data-item><blockquote>“Trong chuyến đi Việt Nam, tôi đã ở khoảng 5–6 khách sạn 5 sao nhưng nhớ nhất vẫn là nơi này. Hồ bơi trong nhà ở đây là đẹp nhất Hà Nội.”</blockquote><div class="rv-stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Zahabiya</b>Tripadvisor</footer></div>
+      <div class="rv" data-item><blockquote>“Đây thật sự là ‘viên ngọc ẩn’ ở khu vực phía Tây, gần sân golf và khu doanh nghiệp — món bún chả ở đây xứng đáng 5/5.”</blockquote><div class="rv-stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Jan Cerato</b>Google Review</footer></div>
+      <div class="rv" data-item><blockquote>“Khách sạn thật sự rất đẹp, tầm nhìn thuộc hàng tuyệt vời nhất thành phố và quầy bar trên tầng thượng yên tĩnh với những ly cocktail ngon miệng.”</blockquote><div class="rv-stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Steven</b>Google Review</footer></div>
+      <div class="rv" data-item><blockquote>“Phòng nghỉ thoải mái, yên tĩnh. Nhân viên thân thiện và chu đáo, buffet sáng phong phú và đa dạng.”</blockquote><div class="rv-stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Scott</b>Tripadvisor</footer></div>
+      <div class="rv-ctrl"><button class="arrow-btn" data-prev aria-label="Trước"><i data-icon="arrow-left"></i></button><span class="eyebrow"><span data-count>01</span> / 04</span><button class="arrow-btn" data-next aria-label="Sau"><i data-icon="arrow"></i></button></div>
+    </div>
+    <div class="rv-sources eyebrow" data-stagger><span><i data-icon="globe"></i>Tripadvisor</span><span><i data-icon="globe"></i>Google Review</span><span><i data-icon="star"></i>Khách quốc tế tin chọn</span></div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section" id="location">
+  <div class="container">
+    <div class="g12 loc-intro">
+      <div class="head"><span class="eyebrow" data-fade>Vị trí đắc địa</span><span class="t-script" data-script>Location</span><h2 class="t-h2" data-split>Trái tim của khu vực Tây Hà Nội</h2></div>
+      <p data-fade>Tọa lạc tại quận Cầu Giấy — trung tâm kinh tế mới của Thủ đô, chỉ vài phút tới Sân bay Nội Bài, SVĐ Quốc gia Mỹ Đình, các Bộ, Ban, Ngành và trụ sở các tập đoàn công nghệ hàng đầu. Kết nối nhanh tới các tuyến cao tốc đi Bắc Ninh, Hải Phòng, Vĩnh Phúc, Thái Nguyên và Quảng Ninh.</p>
+    </div>
+    <div class="g12 loc-grid" data-stagger>
+      <a href="#" class="loc px"><img src="assets/img/loc-ncc.jpg" alt="" data-parallax="5"><div><span class="eyebrow">Hội nghị</span><h3 class="t-h4">Trung tâm Hội nghị Quốc gia</h3></div></a>
+      <a href="#" class="loc px"><img src="assets/img/loc-mydinh.jpg" alt="" data-parallax="5"><div><span class="eyebrow">Thể thao</span><h3 class="t-h4">Sân vận động Mỹ Đình</h3></div></a>
+      <a href="#" class="loc px"><img src="assets/img/loc-oldquarter.jpg" alt="" data-parallax="5"><div><span class="eyebrow">~ 8 km</span><h3 class="t-h4">Phố cổ Hà Nội</h3></div></a>
+      <a href="#" class="loc px"><img src="assets/img/loc-airport.jpg" alt="" data-parallax="5"><div><span class="eyebrow">Di chuyển</span><h3 class="t-h4">Sân bay Quốc tế Nội Bài</h3></div></a>
+      <a href="#" class="loc px"><img src="assets/img/loc-museum.jpg" alt="" data-parallax="5"><div><span class="eyebrow">Văn hoá</span><h3 class="t-h4">Bảo tàng Lịch sử Quân sự</h3></div></a>
+      <a href="#" class="loc px"><img src="assets/img/facade.jpg" alt="" data-parallax="5"><div><span class="eyebrow">Grand K</span><h3 class="t-h4">Số 2 Phạm Văn Bạch</h3></div></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="ftr" id="contact">
+  <div class="container">
+    <div class="g12 ftr-top t-sm" data-stagger>
+      <div><img src="assets/img/logo.png" alt="Grand K" style="height:52px"><span class="t-script-sm">See you soon</span><p>Chào mừng bạn đến với Grand K Hotel Suites Hà Nội.</p></div>
+      <div><h4 class="eyebrow">Khám phá</h4><ul><li><a href="option-1-rooms.html">Hạng phòng</a></li><li><a href="#facilities">Ẩm thực</a></li><li><a href="#facilities">Hội nghị</a></li><li><a href="#facilities">Tiện ích</a></li><li><a href="option-1-news.html">Tin tức</a></li><li><a href="option-1-contact.html">Liên hệ</a></li></ul></div>
+      <div><h4 class="eyebrow">Liên hệ</h4><ul class="contact"><li><i data-icon="pin"></i>Số 2 Phạm Văn Bạch, Cầu Giấy, Hà Nội</li><li><i data-icon="phone"></i>+84 24 3205 2299</li><li><i data-icon="mail"></i>info@grandkhanoi.com</li></ul></div>
+      <div><h4 class="eyebrow">Nhận ưu đãi</h4><p>Đăng ký để nhận ưu đãi đặt phòng trực tiếp sớm nhất.</p><form class="news" onsubmit="event.preventDefault()"><input type="email" placeholder="Email của bạn" aria-label="Email"><button aria-label="Đăng ký"><i data-icon="arrow"></i></button></form></div>
+    </div>
+    <div class="ftr-line" data-line></div>
+    <div class="ftr-bot t-xs"><span>© 2026 Grand K Hotel Suites Hanoi</span><span>Điều khoản · Chính sách bảo mật · Facebook · Instagram · LinkedIn</span></div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:+842432052299" aria-label="Gọi"><i data-icon="phone"></i></a><a href="#book">Đặt phòng ngay</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="assets/js/base.js"></script>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>

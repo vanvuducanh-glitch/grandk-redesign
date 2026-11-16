@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand K Hotel Suites Hanoi — Option 05 · Bento Studio</title>
+<script>(function(r){if(!/[?&]shot/.test(location.search)&&!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('motion');setTimeout(function(){if(!window.gsap)r.classList.remove('motion')},3500)}})(document.documentElement)</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<style>
+/* ===== Option 05 — Bento Studio (ref: Lumóra · Everlake · Stayli) · v2 on 12/8/4 grid =====
+   Brand exception: --fs-mark is the oversized wordmark (graphic, 72→208px), outside the text scale.
+   Option-level style: headings use Inter 400. */
+:root { --bg: #EFEFEC; --r: 28px; --frame: 12px; --fs-mark: clamp(4.5rem, 1rem + 13.5vw, 13rem); }
+@media (max-width: 767px) { :root { --frame: 8px; --r: 20px; } }
+body { background: var(--bg); }
+h1, h2 { font-weight: 400 !important; }
+.loader { background: var(--bg); } .loader .bar { background: var(--line); } .loader .bar i { background: var(--ink); }
+.wrap { padding: var(--frame); display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--frame); }
+.card { background: #fff; border-radius: var(--r); overflow: hidden; position: relative; }
+.kicker { color: var(--muted); display: inline-flex; gap: 8px; align-items: center; }
+.kicker::before { content: ""; width: 14px; height: 1px; background: currentColor; }
+.hl .t-script { display: inline; font-size: 1.3em; color: var(--gold); line-height: .5; }
+
+/* Header */
+.hdr { display: flex; align-items: center; justify-content: space-between; gap: var(--gap); height: 76px; }
+.hdr .nav { text-transform: none; letter-spacing: .02em; gap: 34px; }
+.hdr .nav a::before { content: "·"; margin-right: 34px; color: var(--muted); }
+.hdr .nav a:first-child::before { display: none; }
+.hdr .actions { display: flex; align-items: center; gap: 10px; }
+
+/* Hero */
+.hero-top { align-items: end; padding-block: var(--s4) var(--s5); }
+.wordmark { grid-column: 1 / span 8; font-size: var(--fs-mark); letter-spacing: -.065em; line-height: .86; color: var(--ink); position: relative; }
+.wordmark sup { font-size: .22em; letter-spacing: 0; vertical-align: top; position: relative; top: .25em; margin-left: .06em; }
+.mark-script { position: absolute; left: 0; top: -.2em; font-size: var(--fs-script); color: var(--gold); z-index: 2; }
+.hero-note { grid-column: 9 / span 4; color: var(--muted); }
+.hero-note .chips { display: flex; align-items: center; gap: 10px; margin-bottom: var(--s2); }
+.avatars { display: flex; }
+.avatars img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; margin-left: -10px; }
+.avatars img:first-child { margin-left: 0; }
+.tag { letter-spacing: .14em; text-transform: uppercase; border: 1px solid var(--line); padding: 5px 10px; border-radius: 999px; color: var(--ink); }
+.hero-media { position: relative; height: clamp(400px, 46vw, 660px); margin: 0 var(--frame) var(--frame); border-radius: calc(var(--r) - 8px); }
+.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(8,44,46,.72)); pointer-events: none; }
+.float { position: absolute; z-index: 2; right: var(--s3); bottom: var(--s3); width: 240px; background: #fff; border-radius: 18px; padding: 8px; box-shadow: 0 20px 40px -12px rgba(0,0,0,.35); transition: transform .6s var(--ease-expo); }
+.float:hover { transform: translateY(-6px); }
+.float img { border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.float div { display: flex; justify-content: space-between; align-items: end; padding: 10px 8px 4px; }
+.float small { display: block; color: var(--muted); }
+.trust { position: absolute; z-index: 2; left: var(--s4); bottom: var(--s4); color: #fff; max-width: 55%; }
+.trust p { opacity: .85; max-width: 300px; margin-bottom: var(--s2); }
+.trust ul { list-style: none; display: flex; gap: var(--s3); flex-wrap: wrap; }
+.trust li { display: flex; align-items: center; gap: 8px; }
+
+/* Marquee strip */
+.marq { padding-block: var(--s3); overflow: hidden; }
+.marq-row { display: flex; width: max-content; }
+.marq-row span { display: inline-flex; align-items: center; gap: var(--s3); padding-right: var(--s3); white-space: nowrap; color: var(--ink); }
+.marq-row span::after { content: "✦"; color: var(--gold); font-size: 14px; }
+
+/* Statement + bento */
+.statement { padding-block: var(--section) var(--s7); }
+.statement .kicker { grid-column: 1 / span 4; align-self: start; padding-top: .6em; }
+.statement h2 { grid-column: 5 / span 8; font-size: var(--fs-h2); line-height: 1.2; letter-spacing: var(--tr-heading); }
+.statement h2 .soft { color: #A3ADAD; }
+.bento { padding-bottom: var(--frame); row-gap: var(--gap); }
+.tile { grid-column: span 3; border-radius: 22px; background: var(--bg); padding: var(--s3); min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: transform .6s var(--ease-expo); }
+.tile:hover { transform: translateY(-4px); }
+.tile b { font-size: var(--fs-h2); font-weight: 400; letter-spacing: -.04em; line-height: 1; }
+.tile b sup { font-size: .45em; }
+.tile small { color: var(--muted); }
+.tile.dark { background: var(--petrol-900); color: #fff; }
+.tile.dark small { color: rgba(255,255,255,.65); }
+.tile.img { color: #fff; padding: 0; }
+.tile.img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,44,46,.5), rgba(8,44,46,.1) 40%, rgba(8,44,46,.78)); }
+.tile.img > div { position: relative; z-index: 2; padding: var(--s3); display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.tile.img small { color: rgba(255,255,255,.85); }
+.thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.thumbs img { aspect-ratio: 1; border-radius: 50%; object-fit: cover; }
+.laurel { width: 96px; height: 96px; border-radius: 50%; border: 1px dashed rgba(255,255,255,.35); display: grid; place-items: center; font-size: 34px; color: var(--gold-soft); align-self: flex-end; animation: spin 24s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.split { display: flex; justify-content: space-between; align-items: end; gap: 12px; }
+.split img { width: 92px; height: 92px; border-radius: 14px; object-fit: cover; }
+
+/* Generic section head */
+.sec { padding-block: var(--section); }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: var(--s4); margin-bottom: var(--s5); }
+.sec-head h2 { font-size: var(--fs-h2); line-height: var(--lh-heading); letter-spacing: var(--tr-heading); margin-top: var(--s2); }
+
+/* Rooms */
+.tabs { display: inline-flex; background: var(--bg); padding: 4px; border-radius: 999px; position: relative; }
+.tabs button { position: relative; z-index: 1; padding: 10px 18px; border-radius: 999px; font-weight: 500; color: var(--muted); transition: color var(--dur-micro), background .5s var(--ease-expo), box-shadow .5s; }
+.tabs button.is-active { background: #fff; color: var(--ink); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+.rgroup { display: none; } .rgroup.is-active { display: grid; }
+.rgroup { row-gap: var(--s5); }
+.room { grid-column: span 4; }
+.rgroup.is-active .room { animation: rise .8s var(--ease-expo) both; }
+.rgroup.is-active .room:nth-child(2) { animation-delay: .08s; } .rgroup.is-active .room:nth-child(3) { animation-delay: .16s; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.room figure { position: relative; aspect-ratio: 4/3.1; border-radius: 20px; }
+.room .pill { position: absolute; z-index: 2; top: 14px; right: 14px; background: rgba(255,255,255,.92); color: var(--ink); padding: 6px 12px; border-radius: 999px; }
+.room .meta { display: flex; justify-content: space-between; align-items: center; margin-top: var(--s2); }
+.room .meta span { background: var(--bg); padding: 6px 12px; border-radius: 999px; }
+.room p { color: var(--muted); margin-top: 4px; display: flex; gap: 6px; align-items: center; }
+
+/* Dark services */
+.dark { background: var(--petrol-900); color: #fff; }
+.dark .kicker { color: rgba(255,255,255,.55); }
+.svc-top { align-items: end; }
+.svc-top > div:first-child { grid-column: 1 / span 6; }
+.svc-top > div:last-child { grid-column: 8 / span 5; justify-self: end; text-align: right; }
+.svc-top h2 { font-size: var(--fs-h2); line-height: var(--lh-heading); letter-spacing: var(--tr-heading); margin-top: var(--s2); }
+.svc-top p { color: rgba(255,255,255,.7); }
+.chips { display: flex; gap: 8px; justify-content: flex-end; margin-top: var(--s2); flex-wrap: wrap; }
+.chips span { border: 1px solid var(--line-light); padding: 7px 14px; border-radius: 999px; }
+.svc { margin-top: var(--s6); }
+.svc-list { grid-column: 1 / span 5; }
+.svc-view { grid-column: 7 / span 6; position: relative; border-radius: 20px; overflow: hidden; min-height: 460px; }
+.svc-list button { width: 100%; display: grid; grid-template-columns: 48px 1fr auto; gap: var(--s2); align-items: center; padding: 22px 0; border-top: 1px solid var(--line-light); text-align: left; color: rgba(255,255,255,.5); transition: color var(--dur-micro), padding .5s var(--ease-expo); }
+.svc-list button:last-child { border-bottom: 1px solid var(--line-light); }
+.svc-list button .ic { width: 40px; height: 40px; padding: 11px; border: 1px solid var(--line-light); border-radius: 50%; transition: background var(--dur-micro), border-color var(--dur-micro); }
+.svc-list button.is-active, .svc-list button:hover { color: #fff; }
+.svc-list button.is-active { padding-left: 8px; }
+.svc-list button.is-active .ic { background: var(--gold); border-color: var(--gold); }
+.svc-view figure { position: absolute; inset: 0; opacity: 0; transition: opacity .8s var(--ease); }
+.svc-view figure.is-active { opacity: 1; }
+.svc-view figure.is-active img { animation: kb 1.6s var(--ease-expo) both; }
+@keyframes kb { from { transform: scale(1.14); } to { transform: scale(1); } }
+.svc-view figcaption { position: absolute; left: var(--s3); right: var(--s3); bottom: var(--s3); background: rgba(8,44,46,.75); backdrop-filter: blur(10px); border-radius: 14px; padding: var(--s2) 18px; color: rgba(255,255,255,.88); }
+
+/* Reviews bento */
+.rv-grid { row-gap: var(--gap); }
+.rating { grid-column: span 3; background: var(--petrol-900); color: #fff; border-radius: 20px; padding: var(--s3); display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; }
+.rating b { font-size: var(--fs-h1); font-weight: 400; letter-spacing: -.04em; line-height: 1; }
+.stars { display: flex; gap: 3px; color: var(--gold-soft); font-size: 13px; }
+.rv { grid-column: span 3; background: var(--bg); border-radius: 20px; padding: var(--s3); display: flex; flex-direction: column; }
+.rv .q { font-size: var(--fs-h3); color: var(--petrol); line-height: 1; }
+.rv blockquote { margin: var(--s2) 0 var(--s3); flex: 1; }
+.rv .stars { color: var(--gold); }
+.rv footer { display: flex; justify-content: space-between; align-items: center; margin-top: var(--s2); }
+.rv footer span { color: var(--muted); }
+
+/* Offers */
+.offers { row-gap: var(--gap); }
+.offer { grid-column: span 4; border-radius: 20px; overflow: hidden; background: var(--bg); transition: transform .6s var(--ease-expo); }
+.offer:hover { transform: translateY(-6px); }
+.offer figure { aspect-ratio: 16/10; }
+.offer > div { padding: var(--s3) var(--s3) var(--s4); }
+.offer .tag { display: inline-block; margin-bottom: var(--s2); }
+.offer p { color: var(--muted); margin: 6px 0 var(--s2); }
+
+/* Footer */
+.ftr { background: var(--ink); color: rgba(255,255,255,.7); padding-top: var(--s6); }
+.ftr-top { row-gap: var(--s5); }
+.ftr-top > :nth-child(1) { grid-column: 1 / span 5; }
+.ftr-top > :nth-child(2) { grid-column: 7 / span 2; }
+.ftr-top > :nth-child(3) { grid-column: 9 / span 2; }
+.ftr-top > :nth-child(4) { grid-column: 11 / span 2; }
+.ftr .mail { font-size: var(--fs-h3); color: #fff; letter-spacing: -.02em; display: inline-block; margin-top: var(--s2); background: linear-gradient(#fff, #fff) left bottom / 100% 1px no-repeat; padding-bottom: 4px; transition: background-size .6s var(--ease-expo); }
+.ftr .mail:hover { background-size: 0 1px; background-position: right bottom; }
+.ftr h4 { color: rgba(255,255,255,.45); margin-bottom: var(--s2); }
+.ftr ul { list-style: none; display: grid; gap: 8px; }
+.ftr a { transition: color var(--dur-micro); } .ftr a:hover { color: #fff; }
+.giant { font-weight: 500; font-size: var(--fs-mark); letter-spacing: -.07em; line-height: .8; color: #fff; margin-top: var(--s6); white-space: nowrap; display: flex; align-items: end; justify-content: space-between; gap: var(--s3); }
+.giant .t-script { font-size: var(--fs-script); color: var(--gold-soft); padding-bottom: .15em; }
+.ftr-line { height: 1px; background: var(--line-light); margin-top: var(--s4); }
+.ftr-bot { display: flex; justify-content: space-between; padding-block: var(--s3); gap: var(--s2); flex-wrap: wrap; }
+
+/* ---------- lg ---------- */
+@media (max-width: 1279px) {
+  .wordmark { grid-column: 1 / span 8; }
+  .hero-note { grid-column: 9 / span 4; }
+}
+/* ---------- md (8 col) ---------- */
+@media (max-width: 1023px) {
+  .wordmark, .hero-note, .statement .kicker, .statement h2, .svc-top > div, .svc-list, .svc-view { grid-column: 1 / -1 !important; }
+  .hero-note { margin-top: var(--s4); max-width: 60ch; }
+  .statement h2 { margin-top: var(--s3); }
+  .tile { grid-column: span 4; }
+  .room, .offer { grid-column: span 4; }
+  .svc-top > div:last-child { justify-self: start; text-align: left; margin-top: var(--s3); }
+  .chips { justify-content: flex-start; }
+  .svc-view { margin-top: var(--s5); }
+  .rating, .rv { grid-column: span 4; }
+  .sec-head { flex-direction: column; align-items: flex-start; }
+  .ftr-top > :nth-child(1) { grid-column: 1 / -1; }
+  .ftr-top > :nth-child(2) { grid-column: 1 / span 2; }
+  .ftr-top > :nth-child(3) { grid-column: 3 / span 3; }
+  .ftr-top > :nth-child(4) { grid-column: 6 / span 3; }
+  .float { width: 180px; }
+  .trust p { display: none; }
+}
+/* ---------- sm (4 col) ---------- */
+@media (max-width: 767px) {
+  .tile { grid-column: span 2; min-height: 220px; }
+  .room, .offer, .rating, .rv { grid-column: 1 / -1; }
+  .trust { display: none; }
+  .float { right: var(--s2); bottom: var(--s2); width: 160px; }
+  .ftr-top > * { grid-column: 1 / -1 !important; }
+  .svc-view { min-height: 320px; }
+}
+/* ---------- xs ---------- */
+@media (max-width: 575px) {
+  .tile { grid-column: 1 / -1; }
+}
+</style>
+</head>
+<body>
+<div class="loader" aria-hidden="true"><img src="assets/img/logo.png" alt=""><span class="bar"><i></i></span></div>
+<div class="wrap">
+
+  <!-- HERO CARD -->
+  <section class="card">
+    <div class="container">
+      <header class="hdr">
+        <a href="#" class="logo"><img src="assets/img/logo.png" alt="Grand K Hotel Suites Hanoi" style="height:34px"></a>
+        <nav class="nav"><a href="option-5-rooms.html">Hạng phòng</a><a href="#services">Dịch vụ</a><a href="#offers">Ưu đãi</a><a href="option-5-news.html">Tin tức</a><a href="option-5-contact.html">Liên hệ</a></nav>
+        <div class="actions"><a href="#rooms" class="btn btn-dark btn-pill btn-sm hide-tablet">Đặt phòng</a><button class="menu-btn" style="display:inline-flex" data-menu-toggle aria-label="Mở menu"><i data-icon="menu"></i></button></div>
+      </header>
+      <div class="g12 hero-top">
+        <div class="wordmark">
+          <span class="mark-script t-script" data-hero="script">Hotel Suites</span>
+          <h1 data-hero="split" style="font-size:inherit;letter-spacing:inherit;line-height:inherit">Grand K<sup>®</sup></h1>
+        </div>
+        <div class="hero-note t-sm" data-hero>
+          <div class="chips"><span class="avatars"><img src="assets/img/room-1br.jpg" alt=""><img src="assets/img/pool.jpg" alt=""><img src="assets/img/skybar.jpg" alt=""></span><span class="tag t-xs">[ Cầu Giấy · Hà Nội ]</span></div>
+          262 phòng &amp; căn hộ dịch vụ chuẩn 5 sao — cho người đi công tác, gia đình và những ai muốn một kỳ lưu trú đúng nghĩa “như ở nhà”.
+        </div>
+      </div>
+    </div>
+    <div class="hero-media px" data-hero="media">
+      <img src="assets/img/hotel-night.jpg" alt="Toàn cảnh Cầu Giấy về đêm" data-parallax="8">
+      <div class="trust t-sm"><p>Được khách quốc tế tin chọn và đánh giá 5★ trên các nền tảng du lịch.</p>
+        <ul class="eyebrow"><li><i data-icon="globe"></i>Tripadvisor</li><li><i data-icon="globe"></i>Google Review</li><li><i data-icon="star"></i>Chuẩn 5 sao</li></ul></div>
+      <a href="#rooms" class="float" data-float="60"><img src="assets/img/room-2br-pano.jpg" alt=""><div><span class="t-sm">Panoramic Suite<small class="t-xs">Căn hộ · 95 m²</small></span><i data-icon="arrow"></i></div></a>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="card marq" aria-hidden="true">
+    <div class="marq-row t-h4" data-marquee><span>Tripadvisor 5★</span><span>Google Review 5★</span><span>262 phòng &amp; căn hộ</span><span>SKY 45 Outdoor</span><span>Hồ bơi nước nóng trong nhà</span><span>Hội nghị 175 m²</span><span>Cầu Giấy · Hà Nội</span></div>
+  </div>
+
+  <!-- STATEMENT + BENTO -->
+  <section class="card">
+    <div class="container">
+      <div class="g12 statement">
+        <span class="kicker eyebrow" data-fade>Về Grand K</span>
+        <h2 class="hl" data-split>Chúng tôi tin một kỳ lưu trú đáng nhớ không đến từ sự phô trương, mà từ <span class="t-script">atmosphere</span> — <span class="soft">ánh đèn thành phố từ tầng cao, ly cocktail ở SKY 45, buổi sáng chậm rãi trong căn hộ của riêng bạn.</span></h2>
+      </div>
+      <div class="g12 bento" data-stagger>
+        <div class="tile"><div class="thumbs"><img src="assets/img/room-deluxe.jpg" alt=""><img src="assets/img/room-premium.jpg" alt=""><img src="assets/img/room-junior.jpg" alt=""><img src="assets/img/room-1br.jpg" alt=""><img src="assets/img/room-2br-exec.jpg" alt=""><img src="assets/img/room-2br-pano.jpg" alt=""></div><div><small class="t-sm">Phòng &amp; căn hộ dịch vụ</small><br><b><span data-counter="262">262</span><sup>+</sup></b></div></div>
+        <div class="tile dark"><small class="t-sm">Tiêu chuẩn</small><div class="laurel"><i data-icon="star"></i></div><div><b>5★</b><br><small class="t-sm">Dịch vụ &amp; tiện nghi chuẩn quốc tế</small></div></div>
+        <div class="tile"><small class="t-sm">Từ hội thảo doanh nghiệp đến tiệc công ty — không gian linh hoạt với âm thanh, sân khấu, LED hiện đại.</small><div class="split"><img src="assets/img/meeting.jpg" alt=""><div style="text-align:right"><small class="t-sm">Phòng hội nghị</small><br><b><span data-counter="175">175</span><sup>m²</sup></b></div></div></div>
+        <div class="tile img px"><img src="assets/img/skybar.jpg" alt="" data-parallax="8"><div><small class="t-sm">Rooftop bar</small><div><b><span data-counter="45">45</span><sup>th</sup></b><br><small class="t-sm">Tầng SKY 45 Outdoor</small></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="card" id="rooms">
+    <div class="container sec" data-slides>
+      <div class="sec-head">
+        <div><span class="kicker eyebrow" data-fade>Hạng phòng</span><h2 class="hl" data-split>Không gian <span class="t-script">for every</span> kiểu lưu trú</h2></div>
+        <div class="tabs t-sm" data-fade><button data-tab>Phòng</button><button data-tab>Suite &amp; Căn hộ</button></div>
+      </div>
+      <div class="g12 rgroup" data-item>
+        <a href="option-5-room-deluxe.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-deluxe.jpg" alt=""><span class="pill t-xs">King / Twin</span></figure><div class="meta"><h3 class="t-h4">Deluxe</h3><span class="t-xs">30 m²</span></div><p class="t-sm"><i data-icon="view"></i>Hướng thành phố</p></a>
+        <a href="option-5-room-premium.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-premium.jpg" alt=""><span class="pill t-xs">King</span></figure><div class="meta"><h3 class="t-h4">Premium</h3><span class="t-xs">45 m²</span></div><p class="t-sm"><i data-icon="view"></i>Hướng thành phố</p></a>
+        <a href="option-5-room-junior-suite.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-junior.jpg" alt=""><span class="pill t-xs">Suite</span></figure><div class="meta"><h3 class="t-h4">Junior Suite</h3><span class="t-xs">45 m²</span></div><p class="t-sm"><i data-icon="bed"></i>Không gian sinh hoạt liền mạch</p></a>
+      </div>
+      <div class="g12 rgroup" data-item>
+        <a href="option-5-room-one-bedroom.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-1br.jpg" alt=""><span class="pill t-xs">1 phòng ngủ</span></figure><div class="meta"><h3 class="t-h4">One Bedroom Suite</h3><span class="t-xs">70 m²</span></div><p class="t-sm"><i data-icon="kitchen"></i>Bếp &amp; phòng khách riêng</p></a>
+        <a href="option-5-room-two-bedroom-executive.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-2br-exec.jpg" alt=""><span class="pill t-xs">2 phòng ngủ</span></figure><div class="meta"><h3 class="t-h4">Two Bedroom Executive</h3><span class="t-xs">95 m²</span></div><p class="t-sm"><i data-icon="kitchen"></i>Lý tưởng cho gia đình</p></a>
+        <a href="option-5-room-two-bedroom-panoramic.html" class="room"><figure class="zoom"><img class="cover" src="assets/img/room-2br-pano.jpg" alt=""><span class="pill t-xs">2 phòng ngủ</span></figure><div class="meta"><h3 class="t-h4">Two Bedroom Panoramic</h3><span class="t-xs">95 m²</span></div><p class="t-sm"><i data-icon="view"></i>View toàn cảnh phía Tây</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (dark) -->
+  <section class="card dark" id="services">
+    <div class="container sec">
+      <div class="g12 svc-top">
+        <div><span class="kicker eyebrow" data-fade>Dịch vụ</span><h2 data-split>Trải nghiệm tạo nên dấu ấn lâu dài</h2></div>
+        <div data-fade><p class="t-sm">Một cái nhìn vào nhịp sống tại Grand K — từ bữa sáng buffet đến hoàng hôn trên tầng 45.</p><div class="chips eyebrow"><span>Ẩm thực</span><span>Thư giãn</span><span>Sự kiện</span></div></div>
+      </div>
+      <div class="g12 svc" data-slides>
+        <div class="svc-list" data-stagger>
+          <button data-tab><span class="t-xs">01</span><h3 class="t-h3">Nhà hàng &amp; buffet sáng</h3><i data-icon="arrow"></i></button>
+          <button data-tab><span class="t-xs">02</span><h3 class="t-h3">SKY 45 Outdoor</h3><i data-icon="arrow"></i></button>
+          <button data-tab><span class="t-xs">03</span><h3 class="t-h3">Hồ bơi nước nóng trong nhà</h3><i data-icon="arrow"></i></button>
+          <button data-tab><span class="t-xs">04</span><h3 class="t-h3">Hội nghị &amp; sự kiện</h3><i data-icon="arrow"></i></button>
+          <button data-tab><span class="t-xs">05</span><h3 class="t-h3">Đưa đón sân bay</h3><i data-icon="arrow"></i></button>
+        </div>
+        <div class="svc-view" data-img>
+          <figure data-item><img class="cover" src="assets/img/dining.jpg" alt=""><figcaption class="t-sm">Hành trình ẩm thực đa dạng, tinh tế trong khâu lựa chọn nguyên liệu và chế biến.</figcaption></figure>
+          <figure data-item><img class="cover" src="assets/img/skybar.jpg" alt=""><figcaption class="t-sm">Rooftop yên tĩnh với cocktail ngon và tầm nhìn thuộc hàng đẹp nhất thành phố.</figcaption></figure>
+          <figure data-item><img class="cover" src="assets/img/pool.jpg" alt=""><figcaption class="t-sm">Bơi quanh năm dưới mái kính — “hồ bơi đẹp nhất Hà Nội” theo khách lưu trú.</figcaption></figure>
+          <figure data-item><img class="cover" src="assets/img/meeting.jpg" alt=""><figcaption class="t-sm">175m² phòng họp với âm thanh, sân khấu và màn hình LED hiện đại.</figcaption></figure>
+          <figure data-item><img class="cover" src="assets/img/loc-airport.jpg" alt=""><figcaption class="t-sm">Đưa đón sân bay Nội Bài và di chuyển thuận tiện trong thành phố.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="card" id="reviews">
+    <div class="container sec">
+      <div class="sec-head"><div><span class="kicker eyebrow" data-fade>Đánh giá</span><h2 class="hl" data-split>Những câu chuyện <span class="t-script">from</span> khách lưu trú</h2></div><div data-fade><a href="#" class="btn btn-outline btn-pill btn-sm">Xem tất cả</a></div></div>
+      <div class="g12 rv-grid" data-stagger>
+        <div class="rating"><small class="t-sm" style="opacity:.7">Khách đánh giá</small><div><b>5★</b><div class="stars" style="margin-top:10px"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div></div><a href="#rooms" class="btn btn-light btn-pill btn-sm">Đặt kỳ nghỉ</a></div>
+        <article class="rv"><span class="q">“</span><blockquote>Tôi đã ở khoảng 5–6 khách sạn 5 sao tại Việt Nam nhưng nhớ nhất vẫn là nơi này. Hồ bơi trong nhà là đẹp nhất Hà Nội.</blockquote><div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Zahabiya</b><span class="t-xs">Tripadvisor</span></footer></article>
+        <article class="rv"><span class="q">“</span><blockquote>Đây thật sự là ‘viên ngọc ẩn’ ở khu vực phía Tây, gần sân golf và khu doanh nghiệp.</blockquote><div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Jan Cerato</b><span class="t-xs">Google Review</span></footer></article>
+        <article class="rv"><span class="q">“</span><blockquote>Tầm nhìn thuộc hàng tuyệt vời nhất thành phố và quầy bar trên tầng thượng yên tĩnh với cocktail ngon.</blockquote><div class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></div><footer class="t-sm"><b>Mr. Steven</b><span class="t-xs">Google Review</span></footer></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="card" id="offers">
+    <div class="container sec">
+      <div class="sec-head"><div><span class="kicker eyebrow" data-fade>Ưu đãi đặc biệt</span><h2 data-split>Gói trải nghiệm dành riêng cho bạn</h2></div><div data-fade><a href="#" class="btn btn-outline btn-pill btn-sm">Xem thêm ưu đãi</a></div></div>
+      <div class="g12 offers" data-stagger>
+        <a href="#" class="offer"><figure class="px"><img src="assets/img/skybar.jpg" alt="" data-parallax="6"></figure><div><span class="tag t-xs">Ẩm thực</span><h3 class="t-h4">Hoàng hôn SKY 45</h3><p class="t-sm">Cocktail chào mừng và set đồ nhẹ cho hai người trên tầng thượng.</p><span class="link-arrow" style="color:var(--petrol)">Tìm hiểu thêm <i data-icon="arrow"></i></span></div></a>
+        <a href="#" class="offer"><figure class="px"><img src="assets/img/room-2br-exec.jpg" alt="" data-parallax="6"></figure><div><span class="tag t-xs">Lưu trú dài ngày</span><h3 class="t-h4">Căn hộ như ở nhà</h3><p class="t-sm">Ưu đãi cho kỳ lưu trú từ 7 đêm tại các hạng căn hộ dịch vụ.</p><span class="link-arrow" style="color:var(--petrol)">Tìm hiểu thêm <i data-icon="arrow"></i></span></div></a>
+        <a href="#" class="offer"><figure class="px"><img src="assets/img/meeting.jpg" alt="" data-parallax="6"></figure><div><span class="tag t-xs">Sự kiện</span><h3 class="t-h4">Hội nghị trọn gói</h3><p class="t-sm">Phòng họp, tea-break và lưu trú cho đoàn doanh nghiệp.</p><span class="link-arrow" style="color:var(--petrol)">Tìm hiểu thêm <i data-icon="arrow"></i></span></div></a>
+      </div>
+      <p class="t-xs t-muted" style="margin-top:var(--s3)">* Nội dung ưu đãi minh hoạ cho prototype.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="card ftr" id="contact">
+    <div class="container">
+      <div class="g12 ftr-top t-sm" data-stagger>
+        <div><p>Sẵn sàng cho kỳ lưu trú tiếp theo? Hãy để chúng tôi chuẩn bị mọi thứ.</p><a href="mailto:info@grandkhanoi.com" class="mail">info@grandkhanoi.com</a></div>
+        <div><h4 class="eyebrow">Khám phá</h4><ul><li><a href="option-5-rooms.html">Hạng phòng</a></li><li><a href="#services">Ẩm thực</a></li><li><a href="#services">Hội nghị</a></li><li><a href="option-5-news.html">Tin tức</a></li><li><a href="option-5-contact.html">Liên hệ</a></li></ul></div>
+        <div><h4 class="eyebrow">Liên hệ</h4><ul><li>Số 2 Phạm Văn Bạch, Cầu Giấy, Hà Nội</li><li><a href="tel:+842432052299">+84 24 3205 2299</a></li></ul></div>
+        <div><h4 class="eyebrow">Mạng xã hội</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+      </div>
+      <div class="giant" aria-hidden="true"><span data-fade>Grand K</span><span class="t-script" data-script>see you soon</span></div>
+      <div class="ftr-line" data-line></div>
+      <div class="ftr-bot t-xs"><span>© 2026 Grand K Hotel Suites Hanoi</span><span>Điều khoản · Chính sách bảo mật</span></div>
+    </div>
+  </footer>
+</div>
+
+<div class="drawer">
+  <div class="drawer-top"><img src="assets/img/logo.png" alt="" style="height:36px"><button class="menu-btn" style="display:inline-flex" data-menu-toggle aria-label="Đóng menu"><i data-icon="close"></i></button></div>
+  <nav><a href="option-5-rooms.html">Hạng phòng</a><a href="#services">Dịch vụ</a><a href="#offers">Ưu đãi</a><a href="option-5-news.html">Tin tức</a><a href="option-5-contact.html">Liên hệ</a></nav>
+  <span class="script">Hotel Suites</span>
+</div>
+<div class="mbar"><a href="tel:+842432052299" aria-label="Gọi"><i data-icon="phone"></i></a><a href="#rooms">Đặt phòng ngay</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script src="assets/js/base.js"></script>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>
